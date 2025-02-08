@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
 }
 
-a {
-  color: #00B7FF;
+/* ========== header start ========= */
+
+header {
+  background: #02303c;
+}
+
+header .header_top .logo img{
+  width: 80px;
 }
