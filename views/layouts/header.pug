@@ -1,9 +1,21 @@
 header
   .header_top
     .container
-      .row.justify-content-between
+      .row.justify-content-between.align-items-center
         .col-lg-2
           a.logo(href="/")
             img(src='/images/logo.png' alt='png')
-        .col-lg-2
-          a.phone(href='tel:+998915650070') +998915650070
+        .col-lg-3.d-flex.justify-content-end
+          a.phone(href='tel:+998915650070')
+            i.fa-solid.fa-phone
+            | +998915650070
+  .header_center
+    .container
+      .row
+        .col-lg-6
+          h1 INSIDEUZ chet tillariga ixtisoslashtirilgan o'quv markazi!
+          p Chet tillarini professionallardan o'rganing va o'z karyerangizni boshlang!
+          a(href="#section") Biz bilan bog'laning!
+        .col-lg-6
+          .teacher_img
+            img(src='/images/sab.png' alt='png')

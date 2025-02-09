@@ -3,14 +3,78 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", serif;
+  margin: 0;
 }
 
 /* ========== header start ========= */
 
 header {
   background: #02303c;
+  border-bottom: 10px solid #107184;
+  padding-bottom: 40px;
+}
+
+header .header_top{
+  padding-top: 30px;
+  margin-bottom: 100px;
 }
 
 header .header_top .logo img{
   width: 80px;
+}
+
+header .header_top .phone{
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+
+header .header_top .phone i{
+  color: #48a1ea;
+  margin-right: 15px;
+}
+
+header .header_center h1{
+  color: rgb(216, 211, 211);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 45px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+header .header_center p{
+  margin: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 120px;
+}
+
+header .header_center a{
+  text-decoration: none;
+  background: #48a1ea;
+  padding: 10px 20px;
+  color: white;
+  display: inline-block;
+  border-radius: 30px;
+  font-size: 18px;
+  transition: 500ms;
+}
+
+header .header_center a:hover{
+  color: #48a1ea;
+  background: white;
+  letter-spacing: 3px;
+}
+
+header .header_center .teacher_img {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+header .header_center .teacher_img img {
+  max-width: 100%;
+  max-height: auto;
 }
