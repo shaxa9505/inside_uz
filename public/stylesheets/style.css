@@ -76,5 +76,44 @@ header .header_center .teacher_img {
 
 header .header_center .teacher_img img {
   max-width: 100%;
-  max-height: auto;
+  height: auto;
+}
+
+
+/* ============ main.whyus ============ */
+
+main.whyus{
+  padding-top: 150px;
+  background: #03232b;  
+}
+
+main.whyus h2{
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 30px;
+}
+
+main.whyus .achievement {
+  max-width: 500px;
+  max-height: 500px;
+}
+main.whyus .achievement img {
+  max-width: 100%;
+  height: auto;
+}
+
+main.whyus .text{
+  width: 100%;
+  background: #0e3945;
+  margin-bottom: 15px;
+  color: white;
+  padding: 15px 10px;
+  display: flex;
+  align-items: center;
+}
+
+main.whyus .text i{
+  margin-right: 10px;
+  color: #3bbef5;
 }
