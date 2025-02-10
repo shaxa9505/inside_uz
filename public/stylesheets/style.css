@@ -83,8 +83,9 @@ header .header_center .teacher_img img {
 /* ============ main.whyus ============ */
 
 main.whyus{
-  padding-top: 150px;
-  background: #03232b;  
+  padding: 150px 0 100px;
+  background: #03232b;
+  border-bottom: 10px solid #107184;
 }
 
 main.whyus h2{
