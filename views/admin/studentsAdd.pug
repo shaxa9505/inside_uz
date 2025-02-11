@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  if errorStudentsAdd
+    div.alert.alert-danger #{errorStudentsAdd}
+  .content-header: .container-fluid: .row.mb-2
+    .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
+      li.breadcrumb-item: a(href="/admin") Администратор
+      li.breadcrumb-item: a(href="/admin/students") Количество моих учеников
+      li.breadcrumb-item.active #{title}   
+  .container
+    .row.justify-content-center
+      .col-lg-6
+        if (editActive)
+          form(method="POST" action=`/admin/edit/${abouts._id}` enctype="multipart/form-data").border.p-4.shadow-lg.rounded.formWrapper
+            .mb-3
+              label.form-label.fs-4(for='title') Заголовок
+              input#name.form-control.mb-2(type='text' name='titleru' value=abouts.aboutTitle["ru"] placeholder='Введите название')
+              input#name.form-control(type='text' name='titleen' value=abouts.aboutTitle["en"] placeholder='Enter the title')
+            .mb-3
+              label.form-label.fs-4(for='text') Информация о себе
+              input#name.form-control.mb-2.inText(type='text' name='textru' value=abouts.aboutMe["ru"] placeholder='Введите информацию о себе')
+              input#name.form-control.inText(type='text' name='texten' value=abouts.aboutMe["en"] placeholder='Enter information about yourself')
+            .mb-3
+              label.form-label(for='filefon') Изображение для экрана
+              .aboutFonWrapper
+                .image
+                  each aboutImages, i in abouts.aboutImg
+                    img( src=`/images/about/${aboutImages.filename}` alt='')
+                .content
+                  .icon
+                    i.fas.fa-cloud-upload-alt
+                  .text
+                    | файл пока не выбран
+                #cancel-btn
+                  i.fas.fa-times
+              div.btn.btn-secondary#aboutEdit-btn Выберите изображение
+              input#defaultEdit-btn(type='file' accept=".png, .jpg, .jpeg, .svg   " name="filefon" hidden)
+
+            button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Изменить
+        else 
+          form(method="POST" action="/admin/studentsAdd").border.p-4.shadow-lg.rounded.wrapperForm
+            .mb-3
+              label.form-label.fs-4(for='graduates') Текущие студенты
+              input#name.form-control.mb-2(type='number' name='graduates' placeholder='Введите текущих студентов')
+              label.form-label.fs-4(for='currentStudents') Выпускники
+              input#name.form-control(type='number' name='currentStudents' placeholder='Введите количество студентов, окончивших обучение')
+            button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Создать

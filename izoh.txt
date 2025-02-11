@@ -1,11 +1,11 @@
 1.Header rus tilini professionallardan o'rgaing
 2.Main Nimaga aynan biz va sabablari
-3.Bizning o'quvchilarimiz natijalari son bilan generatorda bo'ladi
+3.Bizning o'quvchilarimiz natijalari son bilan generatorda bo'ladi + admin panel
 4.Biz haqimizda podrobnee va o'qituvchi rasmi
 5.Nimalar olasiz
-6.Hozirgi darslar jadvali
-7.Konsultatsiya olish
-8.footer
+6.Hozirgi darslar jadvali + admin panel
+7.Konsultatsiya olish + admin panel
+8.footer + sotsialnie seti + admin panel
 
 
 
