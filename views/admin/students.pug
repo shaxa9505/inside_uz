@@ -1,32 +1,34 @@
 extends layout
+
 block content
+    if successStudent && successStudent.length > 0
+        p.alert.alert-success #{successStudent}
     .content-header: .container-fluid: .row.mb-2
         .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
             li.breadcrumb-item: a(href="/admin") Администратор
             li.breadcrumb-item.active Количество моих учеников
     .content: .container-fluid: .card#app
-        if (skills.length === 0) 
-            p.ml-2 Нет информации о ваших учениках
-        else 
+        if (students.length === 0)
+            p.ml-2.mt-2 Нет информации о ваших учениках
+            .col-lg-3
+                a(href="/admin/studentsAdd" class="btn btn-primary mb-2 ml-2 mt-2") Создать новый
+        else
             table.table
                 thead
                     tr
                         th #
-                        th Изображение
+                        th Количество студентов, обучающихся на данный момент
+                        th Количество студентов, окончивших обучение
                         th Удалить
                         th Редактировать
-                        th Узнать больше
                 tbody
-                    each skill, i in skills
+                    each student, i in students
                         tr
                             th #{i+1}
-                            td 
-                                img.skills_img(src=`/images/skills/${skill.skillsImg.filename}` alt="")
+                            td #{student.currentStudents}
+                            td #{student.graduates}
                             td
-                                a(href=`/admin/deleteSkill/${skill._id}`).btn.btn-danger Удалить
+                                a(href=`/admin/deleteStudent/${student._id}`).btn.btn-danger Удалить
                             td
-                                a(href=`/admin/editSkill/${skill._id}`).btn.btn-primary Редактировать
-                            td
-                                a(href=`/admin/skillsInfo/${skill._id}`).btn.btn-info Узнать больше
-        .col-lg-3
-            a(href="/admin/studentsAdd" class="btn btn-primary mb-2 ml-2") Создать новый
+                                a(href=`/admin/editStudent/${student._id}`).btn.btn-primary Редактировать
+        

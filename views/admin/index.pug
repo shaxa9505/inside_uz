@@ -1,6 +1,8 @@
 extends layout
 
 block content
+  if errorLink && errorLink.length > 0
+    p.alert.alert-danger #{errorLink}
   .content-header: .container-fluid: .row.mb-2
     .col-sm-6: a(href="/admin").m-0 Панель администратора
     .col-sm-6: ol.breadcrumb.float-sm-right: li.breadcrumb-item: a(href="/") Перейти на сайт  
@@ -11,7 +13,9 @@ block content
           a(href="/admin/students").block
               i.bi.bi-graph-up-arrow
               span.text Количество моих учеников
-              span.number #{skillsCount}
+              each student, i in students
+                span.number #{student.graduates + student.currentStudents}
+
         .col-lg-3
           a(href="/admin/technologys").block
             i.bi.bi-file-bar-graph

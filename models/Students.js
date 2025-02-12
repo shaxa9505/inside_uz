@@ -1,12 +1,12 @@
-const { Schema, default: mongoose } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 
-const studentSchema = Schema({
+const StudentSchema = new Schema({
   graduates: { type: Number, required: true },
   currentStudents: { type: Number, required: true },
   dateCreated: { type: Date, default: Date.now }
 })
 
-const Student = mongoose.model("student", studentSchema)
+const Student = model("student", StudentSchema)
 
 module.exports = Student
