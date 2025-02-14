@@ -118,3 +118,119 @@ main.whyus .text i{
   margin-right: 10px;
   color: #3bbef5;
 }
+
+/* ============ main.results ============ */
+
+main.results {
+  padding-bottom: 100px;
+  background: #03212b;
+  padding-top: 100px;
+  border-bottom: 10px solid #107184;
+}
+
+main.results h2{
+  color: white;
+  margin-bottom: 50px;
+}
+
+main.results .card_results{
+  background: #03313f;
+  border-radius: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+main.results .card_results i{
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* ============ main.aboutus ============ */
+
+main.aboutus {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #01313b;
+  border-bottom: 10px solid #107184;
+}
+
+main.aboutus h2{
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+main.aboutus p{
+  color: white;
+  margin-bottom: 0;
+  margin-bottom: 20px;
+}
+
+main.aboutus a{
+  text-decoration: none;
+  background: #48a1ea;
+  padding: 10px 20px;
+  color: white;
+  display: inline-block;
+  border-radius: 30px;
+  font-size: 18px;
+  transition: 500ms;
+  margin-top: 10px;
+}
+
+main.aboutus a:hover{
+  color: #48a1ea;
+  background: white;
+  letter-spacing: 3px;
+}
+
+main.aboutus .aboutus_img  {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+main.aboutus .aboutus_img img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========== main.courses ============ */
+
+main.courses {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #03212b;
+  border-bottom: 10px solid #107184;
+}
+
+main.courses h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 35px;
+}
+main.courses table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+main.courses th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+main.courses th {
+  background-color: #01313b;
+  color: white;
+}
+main.courses tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

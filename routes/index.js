@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const Students = require("../models/Students")
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Insideuz' });
+
+router.get('/', async function(req, res, next) {
+
+  const students = await Students.find({});
+
+  res.render('index', { title: 'Insideuz',  students});
 });
 
 module.exports = router;

@@ -3,12 +3,16 @@ extends layout
 block content
     if successStudent && successStudent.length > 0
         p.alert.alert-success #{successStudent}
+    if deleteSuccess && deleteSuccess.length > 0
+        p.alert.alert-success #{deleteSuccess}
+    if editSuccess && editSuccess.length > 0
+        p.alert.alert-success #{editSuccess}
     .content-header: .container-fluid: .row.mb-2
         .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
             li.breadcrumb-item: a(href="/admin") Администратор
             li.breadcrumb-item.active Количество моих учеников
     .content: .container-fluid: .card#app
-        if (students && students.length === 0)
+        if (students.length === 0)
             p.ml-2.mt-2 Нет информации о ваших учениках
             .col-lg-3
                 a(href="/admin/studentsAdd" class="btn btn-primary mb-2 ml-2 mt-2") Создать новый
@@ -22,14 +26,13 @@ block content
                         th Удалить
                         th Редактировать
                 tbody
-                   if students && students.length > 0
                     each student, i in students
                         tr
                             th #{i+1}
                             td #{student.currentStudents}
                             td #{student.graduates}
                             td
-                                a(href=`/admin/deleteStudent/${student._id}`).btn.btn-danger Удалить
+                                a(href=`/admin/delete/${student._id}`).btn.btn-danger Удалить
                             td
-                                a(href=`/admin/editStudent/${student._id}`).btn.btn-primary Редактировать
+                                a(href=`/admin/edit/${student._id}`).btn.btn-primary Редактировать
         
