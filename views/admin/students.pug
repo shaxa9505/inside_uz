@@ -26,13 +26,14 @@ block content
                         th Удалить
                         th Редактировать
                 tbody
-                    each student, i in students
-                        tr
-                            th #{i+1}
-                            td #{student.currentStudents}
-                            td #{student.graduates}
-                            td
-                                a(href=`/admin/delete/${student._id}`).btn.btn-danger Удалить
-                            td
-                                a(href=`/admin/edit/${student._id}`).btn.btn-primary Редактировать
+                    if students
+                        each student, i in students
+                            tr
+                                th #{i+1}
+                                td #{student.currentStudents}
+                                td #{student.graduates}
+                                td
+                                    a(href=`/admin/delete/${student._id}`).btn.btn-danger Удалить
+                                td
+                                    a(href=`/admin/edit/${student._id}`).btn.btn-primary Редактировать
         
