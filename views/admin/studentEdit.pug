@@ -14,7 +14,7 @@ block content
         form(method="POST" action=(students ? `/admin/edit/${students._id}` : '#')).border.p-4.shadow-lg.rounded.wrapperForm
           .mb-3
             label.form-label.fs-4(for='graduates') Текущие студенты
-            input#name.form-control.mb-2(type='number' name='graduates' value=students.graduates placeholder='Введите текущих студентов')
+            input#name.form-control.mb-2(type='number' name='graduates' value=(students && students.graduates ? students.graduates : '') placeholder='Введите текущих студентов')
             label.form-label.fs-4(for='currentStudents') Выпускники
-            input#name.form-control(type='number' name='currentStudents' value=students.currentStudents placeholder='Введите количество студентов, окончивших обучение')
+            input#name.form-control(type='number' name='currentStudents' value=(students && students.currentStudents ? students.currentStudents : '')  placeholder='Введите количество студентов, окончивших обучение')
           button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Изменить
