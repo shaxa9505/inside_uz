@@ -12,7 +12,7 @@ block content
             li.breadcrumb-item: a(href="/admin") Администратор
             li.breadcrumb-item.active Количество моих учеников
     .content: .container-fluid: .card#app
-        if (students.length === 0)
+        if students && students.length === 0
             p.ml-2.mt-2 Нет информации о ваших учениках
             .col-lg-3
                 a(href="/admin/studentsAdd" class="btn btn-primary mb-2 ml-2 mt-2") Создать новый
