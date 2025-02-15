@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
 
   res.render("admin/index", {
     title: "Главная страница",
-    students: students || [],
+    students,
     errorLink: req.flash("errorLink")
   })
 })
