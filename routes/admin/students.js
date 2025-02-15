@@ -4,7 +4,7 @@ const router = Router();
 const Students = require("../../models/Students")
 
 
-router.get("/", async (req, res) => {
+router.get("/admin", async (req, res) => {
   
   const students = await Students.find({});
   console.log(students);
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 })
 
 
-router.get("/students", async (req, res) => {
+router.get("/admin/students", async (req, res) => {
   const skills = await Skills.find({});
   const students = await Students.find({});
   res.render("admin/students", {
@@ -32,7 +32,7 @@ router.get("/students", async (req, res) => {
 })
 
 
-router.get("/studentsAdd", async (req, res) => {
+router.get("/admin/studentsAdd", async (req, res) => {
 
   const students = await Students.find().countDocuments()
   const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
@@ -51,7 +51,7 @@ router.get("/studentsAdd", async (req, res) => {
   })
 })
 
-router.post("/studentsAdd", async (req, res) => {
+router.post("/admin/studentsAdd", async (req, res) => {
   const { graduates, currentStudents } = req.body
 
   if(!graduates || !currentStudents) {
@@ -65,13 +65,13 @@ router.post("/studentsAdd", async (req, res) => {
   res.redirect("/admin/students")
 })
 
-router.get("/delete/:id", async (req, res) => {
+router.get("/admin/delete/:id", async (req, res) => {
   await Students.findByIdAndDelete(req.params.id);
   req.flash("deleteSuccess", "Вы успешно удалили!");
   res.redirect("/admin/students")  
 })
 
-router.get("/edit/:id", async (req, res) => {
+router.get("/admin/edit/:id", async (req, res) => {
   const students = await Students.findById(req.params.id);
   // console.log(students)
   res.render("admin/studentEdit", {
@@ -81,7 +81,7 @@ router.get("/edit/:id", async (req, res) => {
   })
 })
 
-router.post("/edit/:id", async (req, res) => {
+router.post("/admin/edit/:id", async (req, res) => {
   const { graduates, currentStudents } = req.body;
   const students = await Students.find({});
 
