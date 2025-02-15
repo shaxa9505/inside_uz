@@ -4,6 +4,20 @@ const router = Router();
 const Students = require("../../models/Students")
 
 
+router.get("/", async (req, res) => {
+  
+  const students = await Students.find({}).lean();
+  console.log(students);
+  
+
+  res.render("admin/index", {
+    title: "Главная страница",
+    students: students || [],
+    errorLink: req.flash("errorLink")
+  })
+})
+
+
 router.get("/students", async (req, res) => {
   const skills = await Skills.find({});
   const students = await Students.find({});

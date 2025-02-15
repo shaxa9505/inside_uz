@@ -6,7 +6,6 @@ main.results
         .card_results
           p Hozirda o'qiyotgan o'quvchilar soni
           i.fa-solid.fa-user
-          pre #{JSON.stringify(students, null, 2)}
           if students && students.length
             each student in students
               span #{student.graduates}

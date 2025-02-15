@@ -10,7 +10,6 @@ const session = require('express-session')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const adminRouter = require("./routes/admin/admin")
 const studentsRouter = require("./routes/admin/students")
 
 const app = express();
@@ -34,7 +33,6 @@ app.use(flash());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/admin", adminRouter)
 app.use("/admin", studentsRouter)
 
 
