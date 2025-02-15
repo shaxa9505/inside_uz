@@ -6,7 +6,7 @@ const router = Router();
 router.get("/", async (req, res) => {
   
   const students = await Students.find({});
-  // console.log(students);
+  console.log(students);
   
 
   res.render("admin/index", {

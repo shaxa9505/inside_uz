@@ -13,7 +13,8 @@ block content
           a(href="/admin/students").block
               i.bi.bi-graph-up-arrow
               span.text Количество моих учеников
-              if(students && students.length > 0)
+              pre #{JSON.stringify(students, null, 2)}
+              if students && students.length > 0
                 each student, i in students
                     span.number #{student.graduates + student.currentStudents}
         .col-lg-3
