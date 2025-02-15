@@ -1,6 +1,6 @@
 const { Router } = require("express");
-const Students = require("../../models/Students");
 const router = Router();
+const Students = require("../../models/Students");
 
 
 router.get("/", async (req, res) => {
