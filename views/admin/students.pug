@@ -12,7 +12,6 @@ block content
             li.breadcrumb-item: a(href="/admin") Администратор
             li.breadcrumb-item.active Количество моих учеников
     .content: .container-fluid: .card#app
-        //- pre #{JSON.stringify(students, null, 2)}
         if students && students.length === 0
             p.ml-2.mt-2 Нет информации о ваших учениках
             .col-lg-3
