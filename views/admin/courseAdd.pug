@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  if errorStudentsAdd && errorStudentsAdd.length > 0
+    p.alert.alert-danger #{errorStudentsAdd}
+  .content-header: .container-fluid: .row.mb-2
+    .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
+      li.breadcrumb-item: a(href="/admin") Администратор
+      li.breadcrumb-item: a(href="/admin/courses") Мои ученики
+      li.breadcrumb-item.active #{title}
+  .container
+    .row.justify-content-center
+      if(editActive)
+        .col-lg-6
+          form(method="POST" action=`/admin/edit/${students._id}`).border.p-4.shadow-lg.rounded.wrapperForm
+            .mb-3
+              label.form-label.fs-4(for='graduates') 
+              input#name.form-control.mb-2(type='number' name='graduates' value=students.graduates placeholder='Введите текущих студентов')
+              label.form-label.fs-4(for='currentStudents') Выпускники
+              input#name.form-control(type='number' name='currentStudents' value=students.currentStudents placeholder='Введите количество студентов, окончивших обучение')
+            button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Изменить
+      else
+        .col-lg-6
+          form(method="POST" action="/admin/studentsAdd").border.p-4.shadow-lg.rounded.wrapperForm
+            .mb-3
+              label.form-label.fs-4(for='graduates') Курс
+              input#name.form-control.mb-2(type='text' name='graduates' placeholder='Введите курс')
+              label.form-label.fs-4(for='currentStudents') Время курса
+              input#name.form-control.mb-2(type='number' name='currentStudents' placeholder='Введите время вашего курса')
+              label.form-label.fs-4(for='graduates') Дни недели
+              input#name.form-control.mb-2(type='text' name='graduates' placeholder='Введите какие дни ваши уроки')
+              label.form-label.fs-4(for='currentStudents') Текущая тема
+              input#name.form-control(type='text' name='currentStudents' placeholder='Введите какую тему преподаёте сейчас')
+            button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Создать
