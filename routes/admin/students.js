@@ -6,15 +6,37 @@ const Students = require("../../models/Students")
 
 router.get("/admin", async (req, res) => {
   
-  const students = await Students.find({});
-  console.log(students);
+  // const students = await Students.find({});
+  // console.log(students);
 
-  res.render("admin/index", {
-    title: "Главная страница",
-    students,
-    errorLink: req.flash("errorLink")
-  })
+  // res.render("admin/index", {
+  //   title: "Главная страница",
+  //   students,
+  //   errorLink: req.flash("errorLink")
+  // })
+
+
+  try {
+    const students = await Students.find({});
+    console.log("Students in /admin:", students); // Выводим в консоль
+    
+    res.render("admin/index", {
+      title: "Главная страница",
+      students,
+      errorLink: req.flash("errorLink"),
+    });
+  } catch (error) {
+    console.error("Ошибка при запросе студентов:", error);
+    res.render("admin/index", {
+      title: "Главная страница",
+      students: null, // Явно передаём null, чтобы избежать ошибки
+      errorLink: req.flash("errorLink"),
+    });
+  }
+
 })
+
+
 
 
 router.get("/admin/students", async (req, res) => {
