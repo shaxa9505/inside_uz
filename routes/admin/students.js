@@ -8,7 +8,6 @@ router.get("/admin", async (req, res) => {
   
   const students = await Students.find({});
   console.log(students);
-  
 
   res.render("admin/index", {
     title: "Главная страница",
