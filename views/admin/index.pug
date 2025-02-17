@@ -11,14 +11,15 @@ block content
       .row
         .col-lg-3
           a(href="/admin/students").block
-              i.bi.bi-graph-up-arrow
-              span.text Количество моих учеников
-              if students && students.length === 0
-                p Нет данных о студентах
-              else
-                if students
-                  each student, i in students
-                    span.number #{student.graduates + student.currentStudents}
+            i.bi.bi-graph-up-arrow
+            span.text Количество моих учеников
+            if !students
+              p Ошибка: students не определён
+            else if students.length === 0
+              p Нет данных о студентах
+            else
+              each student, i in students
+                span.number #{student.graduates + student.currentStudents}
         .col-lg-3
           a(href="/admin/courses").block
             i.bi.bi-mortarboard
@@ -39,4 +40,4 @@ block content
             i.bi.bi-filetype-pdf
             span.text Резюме
             span.number 50,120
-              
+
