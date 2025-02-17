@@ -6,7 +6,7 @@ const Students = require("../../models/Students")
 
 router.get("/admin", async (req, res) => {
   
-  const students = await Students.find();
+  const students = await Students.find({}.select("graduates currentStudents"));
   console.log(students);
 
   res.render("admin/index", {
