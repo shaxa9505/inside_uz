@@ -1,12 +1,12 @@
 const { Router } = require("express");
 const Skills = require("../../models/Skills");
 const router = Router();
-const Students = require("../../models/Students.js")
+const Students = require("../../models/Students")
 
 
 router.get("/admin", async (req, res) => {
   
-  const students = await Students.find({});
+  const students = await Students.find();
   console.log(students);
 
   res.render("admin/index", {
