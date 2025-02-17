@@ -16,8 +16,9 @@ block content
               if students && students.length === 0
                 p Нет данных о студентах
               else
-                each student, i in students
-                  span.number #{student.graduates + student.currentStudents}
+                if students
+                  each student, i in students
+                    span.number #{student.graduates + student.currentStudents}
         .col-lg-3
           a(href="/admin/courses").block
             i.bi.bi-mortarboard
