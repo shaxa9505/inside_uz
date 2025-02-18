@@ -24,7 +24,9 @@ block content
           a(href="/admin/courses").block
             i.bi.bi-mortarboard
             span.text Курсы
-            span.number  15
+            if courses 
+              span.number #{courses.length}
+              
         .col-lg-3
           a(href="/admin/projects").block
             i.bi.bi-tv
