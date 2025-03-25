@@ -1,6 +1,12 @@
 extends layout
 
 block content
+    if successStudent && successStudent.length > 0
+        p.alert.alert-success #{successStudent}
+    if deleteSuccess && deleteSuccess.length > 0
+        p.alert.alert-success #{deleteSuccess}
+    if editSuccess && editSuccess.length > 0
+        p.alert.alert-success #{editSuccess}
     .content-header: .container-fluid: .row.mb-2
         .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
             li.breadcrumb-item: a(href="/admin") Администратор
@@ -25,10 +31,10 @@ block content
                                 td #{course.weekdays}
                                 td #{course.topic}
                                 td
-                                    a(href=`/admin/delete/${course._id}`).btn.btn-danger Удалить
+                                    a(href=`/admin/courseDelete/${course._id}`).btn.btn-danger Удалить
                                 td
-                                    a(href=`/admin/edit/${course._id}`).btn.btn-primary Редактировать
+                                    a(href=`/admin/courseEdit/${course._id}`).btn.btn-primary Редактировать
         else
-            p.ml-2.mt-2 Нет информации о ваших учениках
+            p.ml-2.mt-2 Нет информации о ваших курсах
         .col-lg-3
             a(href="/admin/courseAdd" class="btn btn-primary mb-2 ml-2 mt-2") Создать новый

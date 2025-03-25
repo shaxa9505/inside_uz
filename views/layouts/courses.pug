@@ -7,13 +7,9 @@ main.courses
         th Vaqti
         th Hafta kunlari
         th Hozirgi o'tilayotgan mavzu
-      tr
-        td Chet tili
-        td 10:00
-        td Dushanba, Chorshanba, Juma
-        td Present Simple
-      tr
-        td Dasturlash
-        td 10:00
-        td Seshanba, Payshanba, Shanba
-        td Javascript asoslari
+      each course in courses
+        tr 
+          td #{course.course}
+          td #{course.time}
+          td #{course.weekdays}
+          td #{course.topic}

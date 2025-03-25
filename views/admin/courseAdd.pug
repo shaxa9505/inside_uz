@@ -6,29 +6,19 @@ block content
   .content-header: .container-fluid: .row.mb-2
     .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
       li.breadcrumb-item: a(href="/admin") Администратор
-      li.breadcrumb-item: a(href="/admin/courses") Мои ученики
+      li.breadcrumb-item: a(href="/admin/courses") Мои курсы
       li.breadcrumb-item.active #{title}
   .container
     .row.justify-content-center
-      if(editActive)
-        .col-lg-6
-          form(method="POST" action=`/admin/edit/${students._id}`).border.p-4.shadow-lg.rounded.wrapperForm
-            .mb-3
-              label.form-label.fs-4(for='graduates') 
-              input#name.form-control.mb-2(type='number' name='graduates' value=students.graduates placeholder='Введите текущих студентов')
-              label.form-label.fs-4(for='currentStudents') Выпускники
-              input#name.form-control(type='number' name='currentStudents' value=students.currentStudents placeholder='Введите количество студентов, окончивших обучение')
-            button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Изменить
-      else
-        .col-lg-6
-          form(method="POST" action="/admin/courseAdd").border.p-4.shadow-lg.rounded.wrapperForm
-            .mb-3
-              label.form-label.fs-4(for='course') Курс
-              input#name.form-control.mb-2(type='text' name='course' placeholder='Введите курс')
-              label.form-label.fs-4(for='time') Время курса
-              input#name.form-control.mb-2(type='number' name='time' placeholder='Введите время вашего курса')
-              label.form-label.fs-4(for='weekdays') Дни недели
-              input#name.form-control.mb-2(type='text' name='weekdays' placeholder='Введите какие дни ваши уроки')
-              label.form-label.fs-4(for='topic') Текущая тема
-              input#name.form-control(type='text' name='topic' placeholder='Введите какую тему преподаёте сейчас')
-            button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Создать
+      .col-lg-6
+        form(method="POST" action="/admin/courseAdd").border.p-4.shadow-lg.rounded.wrapperForm
+          .mb-3
+            label.form-label.fs-4(for='course') Курс
+            input#name.form-control.mb-2(type='text' name='course' placeholder='Введите курс')
+            label.form-label.fs-4(for='time') Время курса
+            input#name.form-control.mb-2(type='number' name='time' placeholder='Введите время вашего курса')
+            label.form-label.fs-4(for='weekdays') Дни недели
+            input#name.form-control.mb-2(type='text' name='weekdays' placeholder='Введите какие дни ваши уроки')
+            label.form-label.fs-4(for='topic') Текущая тема
+            input#name.form-control(type='text' name='topic' placeholder='Введите какую тему преподаёте сейчас')
+          button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Создать
