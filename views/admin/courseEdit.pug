@@ -11,7 +11,7 @@ block content
   .container
     .row.justify-content-center
       .col-lg-6
-        form(method="POST" action=`/admin/courseEdit/${courses._id}`).border.p-4.shadow-lg.rounded.wrapperForm
+        form(method="POST" action=(courses ? `/admin/courseEdit/${courses._id}` : "#")).border.p-4.shadow-lg.rounded.wrapperForm
           .mb-3
             label.form-label.fs-4(for='course') Курс
             input#name.form-control.mb-2(type='text' name='course' value=(courses && courses.course ? courses.course : "") placeholder='Введите курс')
