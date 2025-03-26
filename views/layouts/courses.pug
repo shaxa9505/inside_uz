@@ -7,9 +7,10 @@ main.courses
         th Vaqti
         th Hafta kunlari
         th Hozirgi o'tilayotgan mavzu
-      each course in courses
-        tr 
-          td #{course.course}
-          td #{course.time}
-          td #{course.weekdays}
-          td #{course.topic}
+      if courses && courses.length
+        each course in courses
+          tr 
+            td #{course.course}
+            td #{course.time}
+            td #{course.weekdays}
+            td #{course.topic}
