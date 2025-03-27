@@ -6,6 +6,12 @@
   margin: 0;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* ========== header start ========= */
 
 header {
@@ -233,4 +239,49 @@ main.courses th {
 }
 main.courses tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+
+
+/* =========== main.consultation ============ */
+
+main.consultation {
+  padding-top: 100px;
+  background: #02303c;
+  padding-bottom: 100px;
+  border-bottom: 10px solid #107184;
+}
+
+main.consultation .consultation_img{
+  width: 100%;
+  height: auto;
+}
+
+main.consultation .consultation_card {
+  background: #0e4a5c;
+  border: none !important;
+  padding: 30px 30px 5px;
+}
+
+main.consultation .consultation_card .form-control:focus{
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+main.consultation .consultation_card h2{
+  color: white;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  font-size: 37px;
+}
+
+main.consultation .consultation_card p{
+  margin: 0;
+  margin-bottom: 35px;
+  color: white;
+  font-size: 16px;
+}
+
+main.consultation .consultation_card button{
+  background: #48a1ea;
 }

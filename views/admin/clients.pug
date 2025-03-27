@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    if deleteSuccess && deleteSuccess.length > 0
+        p.alert.alert-success #{deleteSuccess}
+    .content-header: .container-fluid: .row.mb-2
+        .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
+            li.breadcrumb-item: a(href="/admin") Администратор
+            li.breadcrumb-item.active Новые ученики
+    .content: .container-fluid: .card#app
+        if (clients && clients.length > 0)
+            table.table
+                thead
+                    tr
+                        th #
+                        th Имя
+                        th Номер телефона
+                tbody
+                    if clients
+                        each client, i in clients
+                            tr
+                                th #{i+1}
+                                td #{client.name}
+                                td #{client.phone}
+                                td
+                                    a(href=`/admin/clientDelete/${client._id}`).btn.btn-danger Удалить
+        else
+            p.ml-2.mt-2 Нет информации о ваших новых учениках

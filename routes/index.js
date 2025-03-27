@@ -9,7 +9,12 @@ router.get('/', async (req, res) => {
   const students = await Students.find({});
   const courses = await Courses.find({});
 
-  res.render('index', { title: 'Insideuz',  students, courses});
+  res.render('index', { 
+    title: 'Insideuz',
+    students,
+    courses,
+    succesClient: req.flash("succesClient"),
+  });
 });
 
 module.exports = router;

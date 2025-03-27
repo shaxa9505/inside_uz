@@ -1,0 +1,13 @@
+main#contact.consultation
+  .container
+    .row
+      .col-lg-6
+        img.consultation_img(src="/images/operator.png" alt="png") 
+      .col-lg-6
+        form.consultation_card(method="POST" action="/admin/client").border.shadow-lg.rounded.wrapperForm
+          h2 Konsultatsiya oling
+          p Ismingiz va telefon raqamingizni qoldiring va biz siz bilan bog'lanamiz
+          .mb-3
+            input#name.form-control.mb-3(type='text' name='name' placeholder='Ismingiz' required)
+            input#phone.form-control(type='number' name='phone' placeholder="Telefon raqamingiz" required)
+            button.btn.btn-dark.shadow-lg.w-100.text-light.mt-5(type='submit') Yuborish

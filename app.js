@@ -12,6 +12,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const studentsRouter = require("./routes/admin/students")
 const coursesRouter = require("./routes/admin/courses")
+const clientsRouter = require("./routes/admin/clients")
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use(flash());
 
 app.use('/', indexRouter);
 app.use("/", studentsRouter)
+app.use("/", clientsRouter)
 app.use("/admin", coursesRouter)
 app.use('/users', usersRouter);
 

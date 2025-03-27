@@ -3,18 +3,21 @@ const Skills = require("../../models/Skills");
 const router = Router();
 const Students = require("../../models/Students")
 const Courses = require("../../models/Courses")
+const Clients = require("../../models/Clients")
 
 
 router.get("/admin", async (req, res) => {
   
   const students = await Students.find({});
   const courses = await Courses.find({});
-  console.log(students);
+  const clients = await Clients.find({});
+  // console.log(students);
 
   res.render("admin/index", {
     title: "Главная страница",
     students,
     courses,
+    clients,
     errorLink: req.flash("errorLink")
   })
 

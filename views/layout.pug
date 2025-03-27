@@ -2,11 +2,14 @@ doctype html
 html
   include layouts/head
   body
+    if succesClient && succesClient.length > 0
+      p.alert.alert-success.mb-0 #{succesClient}
     include layouts/header
     include layouts/whyus
     include layouts/results
     include layouts/aboutus
     include layouts/courses
+    include layouts/consultation
     block content
 
   
