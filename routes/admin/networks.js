@@ -13,7 +13,6 @@ router.get("/admin/networks", async (req, res) => {
   })
 })
 
-
 router.get("/admin/networkAdd", async (req, res) => {
   
   const networks = await Networks.find({});
