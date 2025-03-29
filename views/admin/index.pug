@@ -13,13 +13,11 @@ block content
           a(href="/admin/students").block
             i.bi.bi-graph-up-arrow
             span.text Количество моих учеников
-            if !students
-              p Ошибка: students не определён
-            else if students.length === 0
-              p Нет данных о студентах
-            else
+            if students
               each student, i in students
                 span.number #{student.graduates + student.currentStudents}
+            else 
+              span.number 0
         .col-lg-3
           a(href="/admin/courses").block
             i.bi.bi-mortarboard

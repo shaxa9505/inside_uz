@@ -15,7 +15,6 @@ router.get("/courses", async (req, res) => {
     editSuccess: req.flash("editSuccess"),
     deleteSuccess: req.flash("deleteSuccess"),
     successCourse: req.flash("successCourse"),
-    
   })
 
 })
@@ -34,8 +33,8 @@ router.post("/courseAdd", async (req, res) => {
 
   const course = await Courses.create(req.body)
   // console.log(course);
-  req.flash("successCourse", "")
-  res.redirect("/admin")
+  req.flash("successCourse", "Вы успешно добавили")
+  res.redirect("/admin/courses")
 })
 
 router.get("/courseEdit/:id", async (req, res) => {

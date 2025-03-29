@@ -285,3 +285,47 @@ main.consultation .consultation_card p{
 main.consultation .consultation_card button{
   background: #48a1ea;
 }
+
+
+
+/* =========== main.endBar ============ */
+
+main.endBar{
+  padding-top: 30px;
+  background: #03212b;
+  padding-bottom: 10px;
+  border-bottom: 10px solid #107184;
+}
+
+main.endBar .footer_logo img{
+  width: 80px;
+}
+
+main.endBar .footerSet .icons a i{
+  color: white;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: 1ms;
+}
+
+main.endBar .footerSet .icons a i:hover {
+  transform: scale(1.2);
+}
+
+main.endBar .footerSet .footer_phone{
+  color: #48a1ea;
+  text-decoration: none;
+}
+
+main.endBar .footerSet .footer_phone:hover{
+  text-decoration: underline;
+}
+
+main.endBar p{
+  margin: 0;
+  margin-top: 20px;
+  padding-top: 10px;
+  color: white;
+  font-size: 14px;
+  border-top: 1px solid #3fadd8;
+}

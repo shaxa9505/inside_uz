@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    if successStudent && successStudent.length > 0
-        p.alert.alert-success #{successStudent}
+    if successCourse && successCourse.length > 0
+        p.alert.alert-success #{successCourse}
     if deleteSuccess && deleteSuccess.length > 0
         p.alert.alert-success #{deleteSuccess}
     if editSuccess && editSuccess.length > 0

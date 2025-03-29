@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    if succesNetwork && succesNetwork.length > 0
+        p.alert.alert-success #{succesNetwork}
+    if deleteSuccess && deleteSuccess.length > 0
+        p.alert.alert-success #{deleteSuccess}
+    if editSuccess && editSuccess.length > 0
+        p.alert.alert-success #{editSuccess}
+    .content-header: .container-fluid: .row.mb-2
+        .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
+            li.breadcrumb-item: a(href="/admin") Администратор
+            li.breadcrumb-item.active Мои социальные сети
+    .content: .container-fluid: .card#app
+        if networks && networks.length > 0
+          table.table
+              thead
+                  tr
+                      th #
+                      th Ваша социальная сеть
+                      th Ссылка на вашу социальную сеть
+                      th Удалить
+                      th Редактировать
+              tbody
+                  if networks
+                      each network, i in networks
+                          tr
+                              th #{i+1}
+                              td #{network.network}
+                              td #{network.networkLink}
+                              td
+                                  a(href=`/admin/delete/${network._id}`).btn.btn-danger Удалить
+                              td
+                                  a(href=`/admin/edit/${network._id}`).btn.btn-primary Редактировать
+        else
+            p.ml-2.mt-2 Нет информации ваших социальных сетях
+        .col-lg-3
+            a(href="/admin/networkAdd" class="btn btn-primary mb-2 ml-2 mt-2") Создать новый
+        
