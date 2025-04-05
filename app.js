@@ -43,21 +43,56 @@ app.use("/admin", coursesRouter)
 app.use('/users', usersRouter);
 
 
-
-// catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  next(createError(404));
+  const createError = require('http-errors');
+  next(createError(404)); // передаём ошибку дальше
 });
 
-// error handler
+// 🎯 Обработчик всех ошибок, в том числе 404
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  console.error(err.stack)
+  console.error(err.stack);
+
+  if (err.status === 404) {
+    return res.status(404).render('404'); // <-- вот тут 404.pug
+  }
+
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error'); // <-- вот тут error.pug
 });
+
+// app.use(function (err, req, res, next) {
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+//   console.error(err.stack);
+
+//   // если это ошибка 404 — показать кастомную страницу
+//   if (err.status === 404) {
+//     return res.status(404).render('404');
+//   }
+
+//   // иначе стандартная ошибка
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
+
+// // catch 404 and forward to error handler
+// app.use(function (req, res, next) {
+//   next(createError(404));
+// });
+
+// // error handler
+// app.use(function (err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+//   console.error(err.stack)
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
 
 module.exports = app;

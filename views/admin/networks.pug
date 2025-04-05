@@ -5,8 +5,10 @@ block content
         p.alert.alert-success #{succesNetwork}
     if deleteSuccess && deleteSuccess.length > 0
         p.alert.alert-success #{deleteSuccess}
-    if editSuccess && editSuccess.length > 0
-        p.alert.alert-success #{editSuccess}
+    if editNetwork && editNetwork.length > 0
+        p.alert.alert-success #{editNetwork}
+    if deleteNetwork && deleteNetwork.length > 0
+        p.alert.alert-success #{deleteNetwork}
     .content-header: .container-fluid: .row.mb-2
         .col-sm-6.d-flex.justify-content-start: ol.breadcrumb.float-sm-right
             li.breadcrumb-item: a(href="/admin") Администратор
@@ -29,9 +31,9 @@ block content
                               td #{network.network}
                               td #{network.networkLink}
                               td
-                                  a(href=`/admin/delete/${network._id}`).btn.btn-danger Удалить
+                                  a(href=`/admin/deleteNetwork/${network._id}`).btn.btn-danger Удалить
                               td
-                                  a(href=`/admin/edit/${network._id}`).btn.btn-primary Редактировать
+                                  a(href=`/admin/editNetwork/${network._id}`).btn.btn-primary Редактировать
         else
             p.ml-2.mt-2 Нет информации ваших социальных сетях
         .col-lg-3

@@ -4,6 +4,7 @@ const router = Router();
 const Students = require("../../models/Students")
 const Courses = require("../../models/Courses")
 const Clients = require("../../models/Clients")
+const Networks = require("../../models/Networks")
 
 
 router.get("/admin", async (req, res) => {
@@ -11,6 +12,7 @@ router.get("/admin", async (req, res) => {
   const students = await Students.find({});
   const courses = await Courses.find({});
   const clients = await Clients.find({});
+  const networks = await Networks.find({});
   // console.log(students);
 
   res.render("admin/index", {
@@ -18,6 +20,7 @@ router.get("/admin", async (req, res) => {
     students,
     courses,
     clients,
+    networks,
     errorLink: req.flash("errorLink")
   })
 
