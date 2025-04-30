@@ -8,6 +8,9 @@ const Networkschema = new Schema({
 })
 
 
+
+
+
 const Networks = model("network", Networkschema);
 
 module.exports = Networks

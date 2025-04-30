@@ -10,16 +10,14 @@ main.endBar
             if networks
               each network in networks
                 if network.network == "facebook"
-                  a(href=network.networkLink)
+                  a(href=network.networkLink target='_blank')
                     i.fa-brands.fa-facebook
                 if network.network == "instagram"
-                  a(href=`${network.networkLink}`)
+                  a(href=`${network.networkLink}` target='_blank')
                     i.fa-brands.fa-instagram
                 if network.network == "telegram"
-                  a(href=`${network.networkLink}`)
+                  a(href=`${network.networkLink}` target='_blank')
                     i.fa-brands.fa-telegram
-            else 
-              p 0
           a.footer_phone(href="tel:+998915650070") +998 91 565 00 70
     p Mualliflik huquqi © 2025 Inside
 

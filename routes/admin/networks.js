@@ -67,7 +67,7 @@ router.post("/admin/editNetwork/:id", async (req, res) => {
     return
   }
 
-  await Networks.findOneAndUpdate(req.params.id, req.body)
+  await Networks.findByIdAndUpdate(req.params.id, req.body)
   req.flash("editNetwork", "Вы успешно изменили")
   res.redirect("/admin/networks")
 
